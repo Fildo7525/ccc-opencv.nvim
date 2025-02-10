@@ -1,5 +1,7 @@
 # ccc.nvim
 
+:warning: In progress of adjusting the fork to openCV
+
 **C**reate **C**olor **C**ode in neovim.
 
 Use the colorful sliders to easily generate any desired color!
