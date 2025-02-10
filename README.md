@@ -1,4 +1,4 @@
-# ccc.nvim
+# ccc-opencv.nvim
 
 :warning: In progress of adjusting the fork to openCV
 
