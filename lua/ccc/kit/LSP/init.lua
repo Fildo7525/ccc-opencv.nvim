@@ -2,325 +2,325 @@ local LSP = {}
 
 ---@enum ccc.kit.LSP.SemanticTokenTypes
 LSP.SemanticTokenTypes = {
-  namespace = "namespace",
-  type = "type",
-  class = "class",
-  enum = "enum",
-  interface = "interface",
-  struct = "struct",
-  typeParameter = "typeParameter",
-  parameter = "parameter",
-  variable = "variable",
-  property = "property",
-  enumMember = "enumMember",
-  event = "event",
-  ["function"] = "function",
-  method = "method",
-  macro = "macro",
-  keyword = "keyword",
-  modifier = "modifier",
-  comment = "comment",
-  string = "string",
-  number = "number",
-  regexp = "regexp",
-  operator = "operator",
-  decorator = "decorator",
+	namespace = "namespace",
+	type = "type",
+	class = "class",
+	enum = "enum",
+	interface = "interface",
+	struct = "struct",
+	typeParameter = "typeParameter",
+	parameter = "parameter",
+	variable = "variable",
+	property = "property",
+	enumMember = "enumMember",
+	event = "event",
+	["function"] = "function",
+	method = "method",
+	macro = "macro",
+	keyword = "keyword",
+	modifier = "modifier",
+	comment = "comment",
+	string = "string",
+	number = "number",
+	regexp = "regexp",
+	operator = "operator",
+	decorator = "decorator",
 }
 
 ---@enum ccc.kit.LSP.SemanticTokenModifiers
 LSP.SemanticTokenModifiers = {
-  declaration = "declaration",
-  definition = "definition",
-  readonly = "readonly",
-  static = "static",
-  deprecated = "deprecated",
-  abstract = "abstract",
-  async = "async",
-  modification = "modification",
-  documentation = "documentation",
-  defaultLibrary = "defaultLibrary",
+	declaration = "declaration",
+	definition = "definition",
+	readonly = "readonly",
+	static = "static",
+	deprecated = "deprecated",
+	abstract = "abstract",
+	async = "async",
+	modification = "modification",
+	documentation = "documentation",
+	defaultLibrary = "defaultLibrary",
 }
 
 ---@enum ccc.kit.LSP.DocumentDiagnosticReportKind
 LSP.DocumentDiagnosticReportKind = {
-  Full = "full",
-  Unchanged = "unchanged",
+	Full = "full",
+	Unchanged = "unchanged",
 }
 
 ---@enum ccc.kit.LSP.ErrorCodes
 LSP.ErrorCodes = {
-  ParseError = -32700,
-  InvalidRequest = -32600,
-  MethodNotFound = -32601,
-  InvalidParams = -32602,
-  InternalError = -32603,
-  ServerNotInitialized = -32002,
-  UnknownErrorCode = -32001,
+	ParseError = -32700,
+	InvalidRequest = -32600,
+	MethodNotFound = -32601,
+	InvalidParams = -32602,
+	InternalError = -32603,
+	ServerNotInitialized = -32002,
+	UnknownErrorCode = -32001,
 }
 
 ---@enum ccc.kit.LSP.LSPErrorCodes
 LSP.LSPErrorCodes = {
-  RequestFailed = -32803,
-  ServerCancelled = -32802,
-  ContentModified = -32801,
-  RequestCancelled = -32800,
+	RequestFailed = -32803,
+	ServerCancelled = -32802,
+	ContentModified = -32801,
+	RequestCancelled = -32800,
 }
 
 ---@enum ccc.kit.LSP.FoldingRangeKind
 LSP.FoldingRangeKind = {
-  Comment = "comment",
-  Imports = "imports",
-  Region = "region",
+	Comment = "comment",
+	Imports = "imports",
+	Region = "region",
 }
 
 ---@enum ccc.kit.LSP.SymbolKind
 LSP.SymbolKind = {
-  File = 1,
-  Module = 2,
-  Namespace = 3,
-  Package = 4,
-  Class = 5,
-  Method = 6,
-  Property = 7,
-  Field = 8,
-  Constructor = 9,
-  Enum = 10,
-  Interface = 11,
-  Function = 12,
-  Variable = 13,
-  Constant = 14,
-  String = 15,
-  Number = 16,
-  Boolean = 17,
-  Array = 18,
-  Object = 19,
-  Key = 20,
-  Null = 21,
-  EnumMember = 22,
-  Struct = 23,
-  Event = 24,
-  Operator = 25,
-  TypeParameter = 26,
+	File = 1,
+	Module = 2,
+	Namespace = 3,
+	Package = 4,
+	Class = 5,
+	Method = 6,
+	Property = 7,
+	Field = 8,
+	Constructor = 9,
+	Enum = 10,
+	Interface = 11,
+	Function = 12,
+	Variable = 13,
+	Constant = 14,
+	String = 15,
+	Number = 16,
+	Boolean = 17,
+	Array = 18,
+	Object = 19,
+	Key = 20,
+	Null = 21,
+	EnumMember = 22,
+	Struct = 23,
+	Event = 24,
+	Operator = 25,
+	TypeParameter = 26,
 }
 
 ---@enum ccc.kit.LSP.SymbolTag
 LSP.SymbolTag = {
-  Deprecated = 1,
+	Deprecated = 1,
 }
 
 ---@enum ccc.kit.LSP.UniquenessLevel
 LSP.UniquenessLevel = {
-  document = "document",
-  project = "project",
-  group = "group",
-  scheme = "scheme",
-  global = "global",
+	document = "document",
+	project = "project",
+	group = "group",
+	scheme = "scheme",
+	global = "global",
 }
 
 ---@enum ccc.kit.LSP.MonikerKind
 LSP.MonikerKind = {
-  import = "import",
-  export = "export",
-  ["local"] = "local",
+	import = "import",
+	export = "export",
+	["local"] = "local",
 }
 
 ---@enum ccc.kit.LSP.InlayHintKind
 LSP.InlayHintKind = {
-  Type = 1,
-  Parameter = 2,
+	Type = 1,
+	Parameter = 2,
 }
 
 ---@enum ccc.kit.LSP.MessageType
 LSP.MessageType = {
-  Error = 1,
-  Warning = 2,
-  Info = 3,
-  Log = 4,
+	Error = 1,
+	Warning = 2,
+	Info = 3,
+	Log = 4,
 }
 
 ---@enum ccc.kit.LSP.TextDocumentSyncKind
 LSP.TextDocumentSyncKind = {
-  None = 0,
-  Full = 1,
-  Incremental = 2,
+	None = 0,
+	Full = 1,
+	Incremental = 2,
 }
 
 ---@enum ccc.kit.LSP.TextDocumentSaveReason
 LSP.TextDocumentSaveReason = {
-  Manual = 1,
-  AfterDelay = 2,
-  FocusOut = 3,
+	Manual = 1,
+	AfterDelay = 2,
+	FocusOut = 3,
 }
 
 ---@enum ccc.kit.LSP.CompletionItemKind
 LSP.CompletionItemKind = {
-  Text = 1,
-  Method = 2,
-  Function = 3,
-  Constructor = 4,
-  Field = 5,
-  Variable = 6,
-  Class = 7,
-  Interface = 8,
-  Module = 9,
-  Property = 10,
-  Unit = 11,
-  Value = 12,
-  Enum = 13,
-  Keyword = 14,
-  Snippet = 15,
-  Color = 16,
-  File = 17,
-  Reference = 18,
-  Folder = 19,
-  EnumMember = 20,
-  Constant = 21,
-  Struct = 22,
-  Event = 23,
-  Operator = 24,
-  TypeParameter = 25,
+	Text = 1,
+	Method = 2,
+	Function = 3,
+	Constructor = 4,
+	Field = 5,
+	Variable = 6,
+	Class = 7,
+	Interface = 8,
+	Module = 9,
+	Property = 10,
+	Unit = 11,
+	Value = 12,
+	Enum = 13,
+	Keyword = 14,
+	Snippet = 15,
+	Color = 16,
+	File = 17,
+	Reference = 18,
+	Folder = 19,
+	EnumMember = 20,
+	Constant = 21,
+	Struct = 22,
+	Event = 23,
+	Operator = 24,
+	TypeParameter = 25,
 }
 
 ---@enum ccc.kit.LSP.CompletionItemTag
 LSP.CompletionItemTag = {
-  Deprecated = 1,
+	Deprecated = 1,
 }
 
 ---@enum ccc.kit.LSP.InsertTextFormat
 LSP.InsertTextFormat = {
-  PlainText = 1,
-  Snippet = 2,
+	PlainText = 1,
+	Snippet = 2,
 }
 
 ---@enum ccc.kit.LSP.InsertTextMode
 LSP.InsertTextMode = {
-  asIs = 1,
-  adjustIndentation = 2,
+	asIs = 1,
+	adjustIndentation = 2,
 }
 
 ---@enum ccc.kit.LSP.DocumentHighlightKind
 LSP.DocumentHighlightKind = {
-  Text = 1,
-  Read = 2,
-  Write = 3,
+	Text = 1,
+	Read = 2,
+	Write = 3,
 }
 
 ---@enum ccc.kit.LSP.CodeActionKind
 LSP.CodeActionKind = {
-  Empty = "",
-  QuickFix = "quickfix",
-  Refactor = "refactor",
-  RefactorExtract = "refactor.extract",
-  RefactorInline = "refactor.inline",
-  RefactorRewrite = "refactor.rewrite",
-  Source = "source",
-  SourceOrganizeImports = "source.organizeImports",
-  SourceFixAll = "source.fixAll",
+	Empty = "",
+	QuickFix = "quickfix",
+	Refactor = "refactor",
+	RefactorExtract = "refactor.extract",
+	RefactorInline = "refactor.inline",
+	RefactorRewrite = "refactor.rewrite",
+	Source = "source",
+	SourceOrganizeImports = "source.organizeImports",
+	SourceFixAll = "source.fixAll",
 }
 
 ---@enum ccc.kit.LSP.TraceValues
 LSP.TraceValues = {
-  Off = "off",
-  Messages = "messages",
-  Verbose = "verbose",
+	Off = "off",
+	Messages = "messages",
+	Verbose = "verbose",
 }
 
 ---@enum ccc.kit.LSP.MarkupKind
 LSP.MarkupKind = {
-  PlainText = "plaintext",
-  Markdown = "markdown",
+	PlainText = "plaintext",
+	Markdown = "markdown",
 }
 
 ---@enum ccc.kit.LSP.PositionEncodingKind
 LSP.PositionEncodingKind = {
-  UTF8 = "utf-8",
-  UTF16 = "utf-16",
-  UTF32 = "utf-32",
+	UTF8 = "utf-8",
+	UTF16 = "utf-16",
+	UTF32 = "utf-32",
 }
 
 ---@enum ccc.kit.LSP.FileChangeType
 LSP.FileChangeType = {
-  Created = 1,
-  Changed = 2,
-  Deleted = 3,
+	Created = 1,
+	Changed = 2,
+	Deleted = 3,
 }
 
 ---@enum ccc.kit.LSP.WatchKind
 LSP.WatchKind = {
-  Create = 1,
-  Change = 2,
-  Delete = 4,
+	Create = 1,
+	Change = 2,
+	Delete = 4,
 }
 
 ---@enum ccc.kit.LSP.DiagnosticSeverity
 LSP.DiagnosticSeverity = {
-  Error = 1,
-  Warning = 2,
-  Information = 3,
-  Hint = 4,
+	Error = 1,
+	Warning = 2,
+	Information = 3,
+	Hint = 4,
 }
 
 ---@enum ccc.kit.LSP.DiagnosticTag
 LSP.DiagnosticTag = {
-  Unnecessary = 1,
-  Deprecated = 2,
+	Unnecessary = 1,
+	Deprecated = 2,
 }
 
 ---@enum ccc.kit.LSP.CompletionTriggerKind
 LSP.CompletionTriggerKind = {
-  Invoked = 1,
-  TriggerCharacter = 2,
-  TriggerForIncompleteCompletions = 3,
+	Invoked = 1,
+	TriggerCharacter = 2,
+	TriggerForIncompleteCompletions = 3,
 }
 
 ---@enum ccc.kit.LSP.SignatureHelpTriggerKind
 LSP.SignatureHelpTriggerKind = {
-  Invoked = 1,
-  TriggerCharacter = 2,
-  ContentChange = 3,
+	Invoked = 1,
+	TriggerCharacter = 2,
+	ContentChange = 3,
 }
 
 ---@enum ccc.kit.LSP.CodeActionTriggerKind
 LSP.CodeActionTriggerKind = {
-  Invoked = 1,
-  Automatic = 2,
+	Invoked = 1,
+	Automatic = 2,
 }
 
 ---@enum ccc.kit.LSP.FileOperationPatternKind
 LSP.FileOperationPatternKind = {
-  file = "file",
-  folder = "folder",
+	file = "file",
+	folder = "folder",
 }
 
 ---@enum ccc.kit.LSP.NotebookCellKind
 LSP.NotebookCellKind = {
-  Markup = 1,
-  Code = 2,
+	Markup = 1,
+	Code = 2,
 }
 
 ---@enum ccc.kit.LSP.ResourceOperationKind
 LSP.ResourceOperationKind = {
-  Create = "create",
-  Rename = "rename",
-  Delete = "delete",
+	Create = "create",
+	Rename = "rename",
+	Delete = "delete",
 }
 
 ---@enum ccc.kit.LSP.FailureHandlingKind
 LSP.FailureHandlingKind = {
-  Abort = "abort",
-  Transactional = "transactional",
-  TextOnlyTransactional = "textOnlyTransactional",
-  Undo = "undo",
+	Abort = "abort",
+	Transactional = "transactional",
+	TextOnlyTransactional = "textOnlyTransactional",
+	Undo = "undo",
 }
 
 ---@enum ccc.kit.LSP.PrepareSupportDefaultBehavior
 LSP.PrepareSupportDefaultBehavior = {
-  Identifier = 1,
+	Identifier = 1,
 }
 
 ---@enum ccc.kit.LSP.TokenFormat
 LSP.TokenFormat = {
-  Relative = "relative",
+	Relative = "relative",
 }
 
 ---@class ccc.kit.LSP.ImplementationParams : ccc.kit.LSP.TextDocumentPositionParams, ccc.kit.LSP.WorkDoneProgressParams, ccc.kit.LSP.PartialResultParams
@@ -364,7 +364,7 @@ LSP.TokenFormat = {
 
 ---@class ccc.kit.LSP.ColorPresentation
 ---@field public label string The label of this color presentation. It will be shown on the color<br>picker header. By default this is also the text that is inserted when selecting<br>this color presentation.
----@field public textEdit? ccc.kit.LSP.TextEdit An [edit](#TextEdit) which is applied to a document when selecting<br>this presentation for the color.  When `falsy` the [label](#ColorPresentation.label)<br>is used.
+---@field public textEdit? ccc.kit.LSP.TextEdit An [edit](#TextEdit) which is applied to a document when selecting<br>this presentation for the color.	When `falsy` the [label](#ColorPresentation.label)<br>is used.
 ---@field public additionalTextEdits? ccc.kit.LSP.TextEdit[] An optional array of additional [text edits](#TextEdit) that are applied when<br>selecting this color presentation. Edits must not overlap with the main [edit](#ColorPresentation.textEdit) nor with themselves.
 
 ---@class ccc.kit.LSP.WorkDoneProgressOptions
@@ -550,7 +550,7 @@ LSP.TokenFormat = {
 
 ---@class ccc.kit.LSP.DocumentDiagnosticParams : ccc.kit.LSP.WorkDoneProgressParams, ccc.kit.LSP.PartialResultParams
 ---@field public textDocument ccc.kit.LSP.TextDocumentIdentifier The text document.
----@field public identifier? string The additional identifier  provided during registration.
+---@field public identifier? string The additional identifier	provided during registration.
 ---@field public previousResultId? string The result id of a previous response if provided.
 
 ---@class ccc.kit.LSP.DocumentDiagnosticReportPartialResult
@@ -577,7 +577,7 @@ LSP.TokenFormat = {
 
 ---@class ccc.kit.LSP.DidChangeNotebookDocumentParams
 ---@field public notebookDocument ccc.kit.LSP.VersionedNotebookDocumentIdentifier The notebook document that did change. The version number points<br>to the version after all provided changes have been applied. If<br>only the text document content of a cell changes the notebook version<br>doesn't necessarily have to change.
----@field public change ccc.kit.LSP.NotebookDocumentChangeEvent The actual changes to the notebook document.<br><br>The changes describe single state changes to the notebook document.<br>So if there are two changes c1 (at array index 0) and c2 (at array<br>index 1) for a notebook in state S then c1 moves the notebook from<br>S to S' and c2 from S' to S''. So c1 is computed on the state S and<br>c2 is computed on the state S'.<br><br>To mirror the content of a notebook using change events use the following approach:<br>- start with the same initial content<br>- apply the 'notebookDocument/didChange' notifications in the order you receive them.<br>- apply the `NotebookChangeEvent`s in a single notification in the order<br>  you receive them.
+---@field public change ccc.kit.LSP.NotebookDocumentChangeEvent The actual changes to the notebook document.<br><br>The changes describe single state changes to the notebook document.<br>So if there are two changes c1 (at array index 0) and c2 (at array<br>index 1) for a notebook in state S then c1 moves the notebook from<br>S to S' and c2 from S' to S''. So c1 is computed on the state S and<br>c2 is computed on the state S'.<br><br>To mirror the content of a notebook using change events use the following approach:<br>- start with the same initial content<br>- apply the 'notebookDocument/didChange' notifications in the order you receive them.<br>- apply the `NotebookChangeEvent`s in a single notification in the order<br>	you receive them.
 
 ---@class ccc.kit.LSP.DidSaveNotebookDocumentParams
 ---@field public notebookDocument ccc.kit.LSP.NotebookDocumentIdentifier The notebook document that got saved.
@@ -634,7 +634,7 @@ LSP.TokenFormat = {
 
 ---@class ccc.kit.LSP.DidChangeTextDocumentParams
 ---@field public textDocument ccc.kit.LSP.VersionedTextDocumentIdentifier The document that did change. The version number points<br>to the version after all provided content changes have<br>been applied.
----@field public contentChanges ccc.kit.LSP.TextDocumentContentChangeEvent[] The actual content changes. The content changes describe single state changes<br>to the document. So if there are two content changes c1 (at array index 0) and<br>c2 (at array index 1) for a document in state S then c1 moves the document from<br>S to S' and c2 from S' to S''. So c1 is computed on the state S and c2 is computed<br>on the state S'.<br><br>To mirror the content of a document using change events use the following approach:<br>- start with the same initial content<br>- apply the 'textDocument/didChange' notifications in the order you receive them.<br>- apply the `TextDocumentContentChangeEvent`s in a single notification in the order<br>  you receive them.
+---@field public contentChanges ccc.kit.LSP.TextDocumentContentChangeEvent[] The actual content changes. The content changes describe single state changes<br>to the document. So if there are two content changes c1 (at array index 0) and<br>c2 (at array index 1) for a document in state S then c1 moves the document from<br>S to S' and c2 from S' to S''. So c1 is computed on the state S and c2 is computed<br>on the state S'.<br><br>To mirror the content of a document using change events use the following approach:<br>- start with the same initial content<br>- apply the 'textDocument/didChange' notifications in the order you receive them.<br>- apply the `TextDocumentContentChangeEvent`s in a single notification in the order<br>	you receive them.
 
 ---@class ccc.kit.LSP.TextDocumentChangeRegistrationOptions : ccc.kit.LSP.TextDocumentRegistrationOptions
 ---@field public syncKind ccc.kit.LSP.TextDocumentSyncKind How documents are synced to the server.
@@ -774,7 +774,7 @@ LSP.TokenFormat = {
 ---@field public kind? ccc.kit.LSP.CodeActionKind The kind of the code action.<br><br>Used to filter code actions.
 ---@field public diagnostics? ccc.kit.LSP.Diagnostic[] The diagnostics that this code action resolves.
 ---@field public isPreferred? boolean Marks this as a preferred action. Preferred actions are used by the `auto fix` command and can be targeted<br>by keybindings.<br><br>A quick fix should be marked preferred if it properly addresses the underlying error.<br>A refactoring should be marked preferred if it is the most reasonable choice of actions to take.<br><br>@since 3.15.0
----@field public disabled? ccc.kit.LSP.CodeAction.disabled Marks that the code action cannot currently be applied.<br><br>Clients should follow the following guidelines regarding disabled code actions:<br><br>  - Disabled code actions are not shown in automatic [lightbulbs](https://code.visualstudio.com/docs/editor/editingevolved#_code-action)<br>    code action menus.<br><br>  - Disabled actions are shown as faded out in the code action menu when the user requests a more specific type<br>    of code action, such as refactorings.<br><br>  - If the user has a [keybinding](https://code.visualstudio.com/docs/editor/refactoring#_keybindings-for-code-actions)<br>    that auto applies a code action and only disabled code actions are returned, the client should show the user an<br>    error message with `reason` in the editor.<br><br>@since 3.16.0
+---@field public disabled? ccc.kit.LSP.CodeAction.disabled Marks that the code action cannot currently be applied.<br><br>Clients should follow the following guidelines regarding disabled code actions:<br><br>	- Disabled code actions are not shown in automatic [lightbulbs](https://code.visualstudio.com/docs/editor/editingevolved#_code-action)<br>		code action menus.<br><br>	- Disabled actions are shown as faded out in the code action menu when the user requests a more specific type<br>		of code action, such as refactorings.<br><br>	- If the user has a [keybinding](https://code.visualstudio.com/docs/editor/refactoring#_keybindings-for-code-actions)<br>		that auto applies a code action and only disabled code actions are returned, the client should show the user an<br>		error message with `reason` in the editor.<br><br>@since 3.16.0
 ---@field public edit? ccc.kit.LSP.WorkspaceEdit The workspace edit this code action performs.
 ---@field public command? ccc.kit.LSP.Command A command this code action executes. If a code action<br>provides an edit and a command, first the edit is<br>executed and then the command.
 ---@field public data? ccc.kit.LSP.LSPAny A data entry field that is preserved on a code action between<br>a `textDocument/codeAction` and a `codeAction/resolve` request.<br><br>@since 3.16.0
@@ -947,7 +947,7 @@ LSP.TokenFormat = {
 
 ---@class ccc.kit.LSP.SemanticTokensOptions : ccc.kit.LSP.WorkDoneProgressOptions
 ---@field public legend ccc.kit.LSP.SemanticTokensLegend The legend used by the server
----@field public range? (boolean | {  }) Server supports providing semantic tokens for a specific range<br>of a document.
+---@field public range? (boolean | {	}) Server supports providing semantic tokens for a specific range<br>of a document.
 ---@field public full? (boolean | { delta?: boolean }) Server supports providing semantic tokens for a full document.
 
 ---@class ccc.kit.LSP.SemanticTokensEdit
@@ -1471,7 +1471,7 @@ LSP.TokenFormat = {
 
 ---@class ccc.kit.LSP.DidChangeWatchedFilesClientCapabilities
 ---@field public dynamicRegistration? boolean Did change watched files notification supports dynamic registration. Please note<br>that the current protocol doesn't support static configuration for file changes<br>from the server side.
----@field public relativePatternSupport? boolean Whether the client has support for {@link  RelativePattern relative pattern}<br>or not.<br><br>@since 3.17.0
+---@field public relativePatternSupport? boolean Whether the client has support for {@link	RelativePattern relative pattern}<br>or not.<br><br>@since 3.17.0
 
 ---@class ccc.kit.LSP.WorkspaceSymbolClientCapabilities
 ---@field public dynamicRegistration? boolean Symbol request supports dynamic registration.
@@ -1692,7 +1692,7 @@ LSP.TokenFormat = {
 ---@field public augmentsSyntaxTokens? boolean Whether the client uses semantic tokens to augment existing<br>syntax tokens. If set to `true` client side created syntax<br>tokens and semantic tokens are both used for colorization. If<br>set to `false` the client only uses the returned semantic tokens<br>for colorization.<br><br>If the value is `undefined` then the client behavior is not<br>specified.<br><br>@since 3.17.0
 
 ---@class ccc.kit.LSP.SemanticTokensClientCapabilities.requests
----@field public range? (boolean | {  }) The client will send the `textDocument/semanticTokens/range` request if<br>the server provides a corresponding handler.
+---@field public range? (boolean | {	}) The client will send the `textDocument/semanticTokens/range` request if<br>the server provides a corresponding handler.
 ---@field public full? (boolean | { delta?: boolean }) The client will send the `textDocument/semanticTokens/full` request if<br>the server provides a corresponding handler.
 
 ---@class ccc.kit.LSP.LinkedEditingRangeClientCapabilities
