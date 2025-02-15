@@ -9,13 +9,13 @@ local CssHslOutput = {
 function CssHslOutput.str(RGB, A)
   local H, S, L = unpack(convert.rgb2hsl(RGB))
   H = utils.round(H)
-  S = utils.round(S * 100)
-  L = utils.round(L * 100)
+  S = utils.round(S * 255)
+  L = utils.round(L * 255)
   if A then
     A = utils.round(A * 100)
-    return ("hsl(%d %d%% %d%% / %d%%)"):format(H, S, L, A)
+    return ("hsl(%d %d %d / %d)"):format(H, S, L, A)
   else
-    return ("hsl(%d %d%% %d%%)"):format(H, S, L)
+    return ("hsl(%d %d %d)"):format(H, S, L)
   end
 end
 

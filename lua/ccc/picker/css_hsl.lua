@@ -12,8 +12,8 @@ function CssHslPicker:init()
     return
   end
   self.pattern = {
-    pattern.create("hsla?( [<hue>|none]  [<percentage>|none]  [<percentage>|none] %[/ [<alpha-value>|none]]? )"),
-    pattern.create("hsla?( [<hue>] , [<percentage>] , [<percentage>] %[, [<alpha-value>]]? )"),
+    pattern.create("hsla?( [<hue>|none]  [<saturation>|none]  [<lightning>|none] %[/ [<alpha-value>|none]]? )"),
+    pattern.create("hsla?( [<hue>] , [<saturation>] , [<lightning>] %[, [<alpha-value>]]? )"),
   }
 end
 
