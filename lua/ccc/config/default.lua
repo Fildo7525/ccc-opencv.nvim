@@ -29,8 +29,8 @@ return {
 	alpha_show = "auto",
 	inputs = {
 		input.rgb,
-		input.hsl,
-		input.cmyk,
+		input.hsv,
+		input.oklab
 	},
 	outputs = {
 		output.hex,
