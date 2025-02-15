@@ -13,9 +13,9 @@ function CssHslOutput.str(RGB, A)
   L = utils.round(L * 255)
   if A then
     A = utils.round(A * 100)
-    return ("hsl(%d %d %d / %d)"):format(H, S, L, A)
+    return ("hsv(%d %d %d / %d)"):format(H, S, L, A)
   else
-    return ("hsl(%d %d %d)"):format(H, S, L)
+    return ("hsv(%d %d %d)"):format(H, S, L)
   end
 end
 
